@@ -23,7 +23,7 @@ YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
-"""
+
 url = 'https://news.yahoo.co.jp/articles/d56ceef87e48131e6c409aee300b942fd943860a'
 res = requests.get(url)
 
@@ -60,7 +60,7 @@ if res.status_code==200:
   
 elif res.status_code==404:
   print('NOT OK:' + url)
-"""
+
 
 @app.route("/")
 def hello_world():
@@ -88,7 +88,7 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text="aaaa"))
+        TextSendMessage(text=content))
 
 
 if __name__ == "__main__":
