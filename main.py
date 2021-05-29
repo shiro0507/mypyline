@@ -75,6 +75,8 @@ def handle_message(event):
       to_url="https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php"
       headers = { 'Content-Type': 'application/json' }
       response = requests.post( to_url, data=json.dumps(json_data), headers=headers )
+
+      status="status:" + response.status_code
       print( "status:", response.status_code )
       print("aaaaa")
 
@@ -87,7 +89,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=content))
+        TextSendMessage(text=status))
 
 
 
