@@ -86,6 +86,7 @@ def handle_message(event):
       content += '}'
 
       r = requests.post("https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php", data=content)
+      print(r)
 
       
       
