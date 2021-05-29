@@ -70,28 +70,15 @@ def handle_message(event):
       body_text = body_text.replace("\n", "<br>")
       body_text = body_text.replace("<br><br>", "<br>")
 
-      content =  '{'
-      content += ' \"status\": \"OK\", '
-      content += ' \"totalResults\": \"1\", '
-      content += ' \"articles\": [ '
-      content += ' { '
-      content += ' \"source\": { '
-      content += ' \"id\": null, '
-      content += ' \"name\": "Yahoo.co.jp" '
-      content += ' }, '
-      content += ' \"author\": null,'
-      content += ' \"title\": \"' + title_text + '\", '
-      content += ' \"description\": \"' + body_text + '\",'
-      content += ' \"url\": \"' + url + '\",'
-      content += ' \"urlToImage\": null,'
-      content += ' \"publishedAt\": null,'
-      content += ' \"content\": null}]'
-      content += '}'
+      content =  { "title": title_text 
+                   "description": body_text
+                   "url":  url 
+                 }
 
       to_url="https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php"
       json_data=content
       headers = { 'Content-Type': 'application/json' }
-      response = requests.post( to_url, data=json_data, headers=headers )
+      response = requests.post( to_url, data=json.dumps(json_data), headers=headers )
       print( "status:", response.status_code )
       print("aaaaa")
 
