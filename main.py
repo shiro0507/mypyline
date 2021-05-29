@@ -69,6 +69,10 @@ def handle_message(event):
       #body_text = body_text.replace("\"","\\\"")
       body_text = body_text.replace("\n", "<br>")
       body_text = body_text.replace("<br><br>", "<br>")
+      body_text += "<a href=\""+url+"\">アーカイブ元</a>"
+      body_text += "<p>配信日 "+time_text+"</p>"
+
+
       image = soup.find('img', class_='sc-elJkPf')
       image = image['src']
 
