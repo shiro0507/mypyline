@@ -66,7 +66,7 @@ def handle_message(event):
       time_text = soup.find('time').get_text()
       body_text = soup.find('div', class_='article_body')
       body_text = str(body_text)
-      body_text = body_text.replace("\"","\\\"")
+      #body_text = body_text.replace("\"","\\\"")
       body_text = body_text.replace("\n", "<br>")
       body_text = body_text.replace("<br><br>", "<br>")
 
