@@ -76,7 +76,7 @@ def handle_message(event):
       headers = { 'Content-Type': 'application/json' }
       response = requests.post( to_url, data=json.dumps(json_data), headers=headers )
 
-      status="status:" + response.status_code
+      status="status:" + str(response.status_code)
       print( "status:", response.status_code )
       print("aaaaa")
 
