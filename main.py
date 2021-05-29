@@ -91,7 +91,7 @@ def handle_message(event):
       to_url="https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php"
       json_data=content
       headers = { 'Content-Type': 'application/json' }
-      response = requests.post( to_url, data=json.dumps(json_data), headers=headers )
+      response = requests.post( to_url, data=json_data, headers=headers )
       print( "status:", response.status_code )
       print("aaaaa")
 
