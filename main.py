@@ -85,6 +85,8 @@ def handle_message(event):
       content += ' \"content\": null}]'
       content += '}'
 
+      r = requests.post("https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php", data=content)
+
       
       
     elif res.status_code==404:
