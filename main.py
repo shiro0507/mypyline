@@ -69,8 +69,11 @@ def handle_message(event):
       #body_text = body_text.replace("\"","\\\"")
       body_text = body_text.replace("\n", "<br>")
       body_text = body_text.replace("<br><br>", "<br>")
+      image = soup.find('img', class_='sc-elJkPf')
+      image = image['src']
 
-      json_data =  {'title': title_text, 'description':body_text,'url': url, 'time':time_text}
+
+      json_data =  {'title': title_text, 'description':body_text,'url': url, 'time':time_text, 'image':image}
 
       to_url="https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php"
       headers = { 'Content-Type': 'application/json' }
