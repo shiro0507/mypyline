@@ -79,7 +79,7 @@ def handle_message(event):
 
       json_data =  {'title': title_text, 'description':body_text,'url': url, 'time':time_text, 'image':image}
 
-      to_url="https://velvet-osabori.ssl-lolipop.jp/nayuta/fromheroku.php"
+      to_url="https://velvet-osabori.ssl-lolipop.jp/sexcrime/fromheroku.php"
       headers = { 'Content-Type': 'application/json' }
       response = requests.post( to_url, data=json.dumps(json_data), headers=headers )
 
