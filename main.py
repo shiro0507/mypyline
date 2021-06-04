@@ -58,6 +58,8 @@ def handle_message(event):
 
     url=event.message.text
     res = requests.get(url)
+    ken = ['北海道','青森','秋田','岩手','宮城','山形','福島','新潟','群馬','埼玉','茨城','栃木','東京','千葉','神奈川','横浜','山梨','長野','富山','石川','福井','静岡','愛知','岐阜','三重','京都','滋賀','和歌山','奈良','大阪','兵庫','岡山','鳥取','島根','広島','山口','香川','高知','愛媛','徳島','福岡','大分','熊本','長崎','宮崎','鹿児島','佐賀','沖縄']
+    ken_tag = []
 
     if res.status_code==200:
 
@@ -72,6 +74,14 @@ def handle_message(event):
       body_text += "<a href=\""+url+"\">アーカイブ元</a>"
       body_text += "<p>配信日 "+time_text+"</p>"
 
+      for k in ken:      
+        if body_text.find(k)!=-1:
+          ken_tag.append(k)
+        else:
+          print('なし')
+
+      for k_tag in ken_tag:
+        print(k_tag)
 
       image = soup.find('img', class_='sc-fMiknA')
       image = image['src']
