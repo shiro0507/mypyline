@@ -62,7 +62,7 @@ def handle_message(event):
     if res.status_code==200:
 
       soup = BeautifulSoup(res.text, 'html.parser')
-      title_text = soup.find('h1', class_='sc-exkUMo').get_text()
+      title_text = soup.find('h1', class_='sc-hzDEsm').get_text()
       time_text = soup.find('time').get_text()
       body_text = soup.find('div', class_='article_body')
       body_text = str(body_text)
@@ -73,7 +73,7 @@ def handle_message(event):
       body_text += "<p>配信日 "+time_text+"</p>"
 
 
-      image = soup.find('img', class_='sc-elJkPf')
+      image = soup.find('img', class_='sc-fMiknA')
       image = image['src']
 
 
