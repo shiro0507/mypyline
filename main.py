@@ -87,7 +87,7 @@ def handle_message(event):
       image = image['src']
 
 
-      json_data =  {'title': title_text, 'description':body_text,'url': url, 'time':time_text, 'image':image}
+      json_data =  {'title': title_text, 'description':body_text,'url': url, 'time':time_text, 'image':image, 'tags':ken_tag}
 
       to_url="https://velvet-osabori.ssl-lolipop.jp/sexcrime/fromheroku.php"
       headers = { 'Content-Type': 'application/json' }
